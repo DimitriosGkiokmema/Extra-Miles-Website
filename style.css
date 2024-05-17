@@ -26,6 +26,11 @@ body{
 .text{
     text-align: center;
 }
+.header{
+    text-align: center;
+    position: sticky;
+    top: 0;
+}
 .box{
     border: 5px solid;
     font-style: 5em;
