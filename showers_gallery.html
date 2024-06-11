@@ -17,104 +17,48 @@
         <button style="border-radius: 5px;">Floors & Walls</button>
     </a>
     <br>
-    <div class="gallery">
-        <img src="Images_showers/IMG_5487.PNG">
-        <img src="Images_showers/IMG_5484.PNG">
-        <img src="Images_showers/IMG_5495.PNG">
-        <img src="Images_showers/IMG_1116.PNG">
-        <img src="Images_showers/IMG_0333.PNG">
-        <img src="Images_showers/IMG_5346.PNG">
-        <img src="Images_showers/IMG_5347.PNG">
-        <img src="Images_showers/IMG_5345.PNG">
-        <img src="Images_showers/IMG_5547.PNG">
-        <img src="Images_showers/IMG_5548.PNG">
-        <img src="Images_showers/IMG_5639.PNG">
-        <img src="Images_showers/IMG_5654.PNG">
-        <img src="Images_showers/IMG_5651.PNG">
-        <img src="Images_showers/IMG_5898.PNG">
-        <img src="Images_showers/IMG_5900.PNG">
-        <img src="Images_showers/IMG_6075.PNG">
-        <img src="Images_showers/IMG_6076.PNG">
-        <img src="Images_showers/IMG_6066.PNG">
-        <img src="Images_showers/IMG_6635.PNG">
-        <img src="Images_showers/IMG_6728.PNG">
-        <img src="Images_showers/IMG_6729.PNG">
-        <img src="Images_showers/IMG_6989.PNG">
-        <img src="Images_showers/IMG_6990.PNG">
-        <img src="Images_showers/IMG_6991.PNG">
-        <img src="Images_showers/IMG_7016.PNG">
-        <img src="Images_showers/IMG_7108.PNG">
-        <img src="Images_showers/IMG_7109.PNG">
-        <img src="Images_showers/IMG_7077.PNG">
-        <img src="Images_showers/IMG_7184.PNG">
-        <img src="Images_showers/IMG_7020.PNG">
-        <img src="Images_showers/IMG_7226.PNG">
-        <img src="Images_showers/IMG_7227.PNG">
-        <img src="Images_showers/IMG_7263.PNG">
-        <img src="Images_showers/IMG_7238.PNG">
-        <img src="Images_showers/IMG_7265.PNG">
-        <img src="Images_showers/IMG_7273.PNG">
-        <img src="Images_showers/IMG_7414.PNG">
-        <img src="Images_showers/IMG_7432.PNG">
-        <img src="Images_showers/IMG_7450.PNG">
-        <img src="Images_showers/IMG_7449.PNG">
-        <img src="Images_showers/IMG_7447.PNG">
-        <img src="Images_showers/IMG_7446.PNG">
-        <img src="Images_showers/IMG_7445.PNG">
-        <img src="Images_showers/IMG_7516.PNG">
-        <img src="Images_showers/IMG_7559.PNG">
-        <img src="Images_showers/IMG_7568.PNG">
-        <img src="Images_showers/IMG_7624.PNG">
-        <img src="Images_showers/IMG_7641.PNG">
-        <img src="Images_showers/IMG_7727.PNG">
-        <img src="Images_showers/IMG_7731.PNG">
-        <img src="Images_showers/IMG_7733.PNG">
-        <img src="Images_showers/IMG_7734.PNG">
-        <img src="Images_showers/IMG_7776.PNG">
-        <img src="Images_showers/IMG_7777.PNG">
-        <img src="Images_showers/IMG_7787.PNG">
-        <img src="Images_showers/IMG_7788.PNG">
-        <img src="Images_showers/IMG_7853.PNG">
-        <img src="Images_showers/IMG_7854.PNG">
-        <img src="Images_showers/IMG_7855.PNG">
-        <img src="Images_showers/IMG_7929.PNG">
-        <img src="Images_showers/IMG_7932.PNG">
-        <img src="Images_showers/IMG_7986.PNG">
-        <img src="Images_showers/IMG_7987.PNG">
-        <img src="Images_showers/IMG_8042.PNG">
-        <img src="Images_showers/IMG_8045.PNG">
-        <img src="Images_showers/IMG_8044.PNG">
-        <img src="Images_showers/IMG_8065.PNG">
-        <img src="Images_showers/IMG_8067.PNG">
-        <img src="Images_showers/IMG_8074.PNG">
-        <img src="Images_showers/IMG_8075.PNG">
-        <img src="Images_showers/IMG_8077.PNG">
-        <img src="Images_showers/IMG_8180.PNG">
-        <img src="Images_showers/IMG_8190.PNG">
-        <img src="Images_showers/IMG_8193.PNG">
-        <img src="Images_showers/IMG_8206.PNG">
-        <img src="Images_showers/IMG_8275.PNG">
-        <img src="Images_showers/IMG_8276.PNG">
-        <img src="Images_showers/IMG_8325.PNG">
-        <img src="Images_showers/IMG_8326.PNG">
-        <img src="Images_showers/IMG_8486.PNG">
-        <img src="Images_showers/IMG_8487.PNG">
-        <img src="Images_showers/IMG_8691.PNG">
-        <img src="Images_showers/IMG_8693.PNG">
-        <img src="Images_showers/IMG_8702.PNG">
-        <img src="Images_showers/IMG_8773.PNG">
-        <img src="Images_showers/IMG_8776.PNG">
-        <img src="Images_showers/IMG_8973.PNG">
-        <img src="Images_showers/IMG_9096.PNG">
-        <img src="Images_showers/IMG_9133.PNG">
-        <img src="Images_showers/IMG_9131.PNG">
-        <img src="Images_showers/IMG_9341.PNG">
-        <img src="Images_showers/IMG_9394.PNG">
-        <img src="Images_showers/IMG_9397.PNG">
-        <img src="Images_showers/IMG_9480.PNG">
-        <img src="Images_showers/IMG_9482.PNG">
-        <img src="Images_showers/IMG_9484.PNG">
-        <img src="Images_showers/IMG_9506.PNG">
-    </div>
+    <div id="gallery" class="gallery"></div>
+    <script>
+        // Array of image names
+        const imageNames = ['IMG_5487.png', 'IMG_5484.png', 'IMG_5495.png', 'IMG_1116.png', 'IMG_0333.png', 'IMG_5346.png', 'IMG_5347.png', 'IMG_5345.png', 'IMG_5547.png', 'IMG_5548.png', 'IMG_5639.png', 'IMG_5654.png', 'IMG_5651.png', 'IMG_5898.png', 'IMG_5900.png', 'IMG_6075.png', 'IMG_6076.png', 'IMG_6066.png', 'IMG_6635.png', 'IMG_6728.png', 'IMG_6729.png', 'IMG_6989.png', 'IMG_6990.png', 'IMG_6991.png', 'IMG_7016.png', 'IMG_7108.png', 'IMG_7109.png', 'IMG_7077.png', 'IMG_7184.png', 'IMG_7020.png', 'IMG_7226.png', 'IMG_7227.png', 'IMG_7263.png', 'IMG_7238.png', 'IMG_7265.png', 'IMG_7273.png', 'IMG_7414.png', 'IMG_7432.png', 'IMG_7450.png', 'IMG_7449.png', 'IMG_7447.png', 'IMG_7446.png', 'IMG_7445.png', 'IMG_7516.png', 'IMG_7559.png', 'IMG_7568.png', 'IMG_7624.png', 'IMG_7641.png', 'IMG_7727.png', 'IMG_7731.png', 'IMG_7733.png', 'IMG_7734.png', 'IMG_7776.png', 'IMG_7777.png', 'IMG_7787.png', 'IMG_7788.png', 'IMG_7853.png', 'IMG_7854.png', 'IMG_7855.png', 'IMG_7929.png', 'IMG_7932.png', 'IMG_7986.png', 'IMG_7987.png', 'IMG_8042.png', 'IMG_8045.png', 'IMG_8044.png', 'IMG_8065.png', 'IMG_8067.png', 'IMG_8074.png', 'IMG_8075.png', 'IMG_8077.png', 'IMG_8180.png', 'IMG_8190.png', 'IMG_8193.png', 'IMG_8206.png', 'IMG_8275.png', 'IMG_8276.png', 'IMG_8325.png', 'IMG_8326.png', 'IMG_8486.png', 'IMG_8487.png', 'IMG_8691.png', 'IMG_8693.png', 'IMG_8702.png', 'IMG_8773.png', 'IMG_8776.png', 'IMG_8973.png', 'IMG_9096.png', 'IMG_9133.png', 'IMG_9131.png', 'IMG_9341.png', 'IMG_9394.png', 'IMG_9397.png', 'IMG_9480.png', 'IMG_9482.png', 'IMG_9484.png', 'IMG_9506.png', 'IMG_1744.jpg', 'IMG_5348.png', 'IMG_5803.png', 'IMG_5946.png', 'IMG_5947.png']
+        
+        // Function to create an img element
+        function createImageElement(imageName) {
+            const img = document.createElement('img');
+            img.classList.add('gallery-image');
+            img.src = `Images_showers/${imageName}`;
+            return img;
+        }
+
+        // Function to display images in the gallery
+        function displayImages() {
+            const gallery = document.getElementById('gallery');
+            imageNames.forEach(imageName => {
+            gallery.appendChild(createImageElement(imageName));
+            });
+        }
+
+        // Call displayImages on window load
+        window.onload = displayImages;
+        
+        document.addEventListener('DOMContentLoaded', function() 
+        {
+            // Attach click event listener to the gallery container
+            document.getElementById('gallery').addEventListener('click', function(event) 
+            {
+                // Check if the clicked element is an image with the 'gallery-image' class
+                if (event.target.classList.contains('gallery-image'))
+                {
+                    var newWindow = window.open();
+                    newWindow.document.title = "Shower Images";
+                    var img = newWindow.document.createElement("img");
+                    img.src = event.target.src; // Use the src of the clicked image
+                    img.style.width = "100%";
+                    img.style.height = "auto";
+                    newWindow.document.body.appendChild(img);
+                }
+            });
+        });
+    </script>
 </body>
 </html>
