@@ -53,14 +53,16 @@ body{
     position: sticky;
     top: 0;
 }
-.box{
-    border: 5px solid;
-    font-style: 5em;
-    width: 250px;
-    height: 250px;
-    margin:auto
-}
-#box1{
-    background-color: rgba(68, 77, 136, 0.2);
-    margin-top: 50px;
-}
+ul {
+    list-style-type: disc;
+    padding-left: 20px;
+  }
+  .list-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .list-column {
+    flex: 1 1 250px; /* Grow to fill space, minimum width of 250px */
+    max-width: 250px;
+  }
