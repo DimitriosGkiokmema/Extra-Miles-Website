@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+body {
+    background-color: #f8f9fa;
+}
+
+.review-card {
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    height: 100%;
+}
+
+.review-card:hover {
+    transform: translate(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+}
+
+.carousel-container {
+    scroll-behavior: smooth;
+}
+
+.star {
+    color: #FFD700;
+}
+
+.avatar {
+    background-color: #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #555;
+}
+
+.control-btn:hover {
+    background-color: #2563eb;
+    color: #2563eb;
+}
+
+.tile-pattern {
+    background-size: 20px 20px;
+    background-position: 0 0, 10px 10px;
+}
+
+.dot {
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    transform: scale(1.3);
+}

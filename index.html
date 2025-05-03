@@ -2,29 +2,220 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, intitial-scale=1.0">  <!-- settings-->
-    <meta name="keywords" content="tile installer, tile installation, contractor">  <!-- helps search engine find webstie -->
+    <meta name="keywords" content="tile installer, tile installation, contractor">  <!-- helps search engine find website -->
     <meta name="description" content="...">                  <!-- TO DO: description for web browser -->
-    <link rel="stylesheet" href="style.css">
     <title>EXTRA MILES TILE & STONE INSTALLATIONS LTD</title>
-  </head>
 
-  <header class="text" style="background-color: #3d8aef;">
+    <!-- Bootstrap, tailwind, fontAwesome -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/d082821527.js" crossorigin="anonymous"></script>
+
+    <!-- CSS files -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/reviews.css">
+</head>
+<header class="text" style="background-color: #3d8aef;">
     <h1 style="color: #000080;">Extra Miles Tile & Stone Installations LTD</h1>
-    <!-- Buttons Section-->
-    <a href="backsplash_gallery.html">
-      <button style="border-radius: 5px;">Backsplash</button>
-    </a>
-    <a href="showers_gallery.html">
-      <button style="border-radius: 5px;">Bathrooms, Showers & Steam Showers</button>
-    </a>
-    <a href="floors_walls_gallery.html">
-      <button style="border-radius: 5px;">Floors & Walls</button>
-    </a>
-    <hr>
-  </header>
 
-  <body>
+    <div class="row">
+        <div class="col" id="headerContainer" style="height: 60px;">
+            <!-- Logo -->
+            <img src="Images/logo.jpg" id="headerLogo">
+
+            <!-- Buttons Section-->
+            <a href="projects.html">
+                <button style="border-radius: 5px;">Projects</button>
+            </a>
+            <a href="gallery.html">
+                <button style="border-radius: 5px;">Gallery</button>
+            </a>
+            <a href="contact.html">
+                <button style="border-radius: 5px;">Contact</button>
+            </a>
+        </div>
+    </div>
+</header>
+
+<body>
+  <!-- Slideshow -->
+    <div class="row">
+        <div class="col" id="slideshowContainer">
+            <button type="button" id="leftButton">&lt</button>
+            <img id="slide"></img>
+            <button type="button" id="rightButton">&gt</button>
+        </div>
+    </div>
+
+    <!-- Reviews -->
+    <div class="container mx-auto px-4 py-12 max-w-6xl">
+      <div class="mb-12 text-center">
+          <h2 class="text-3xl md: text-4xl font-bold text-gray-800 mb-4">What Our Costumers Say</h2>
+          <div class="w-24 h-1 bg-blue-600 mx-auto mb-6"></div>
+          <p class="text-gray-600 max-w-2xl mx-auto">See what our satisfied customers have to say about our professional tile installation services.</p>
+      </div>
+
+      <div class="relative">
+          <!-- Carousel Container -->
+          <div id="reviewCarousel" class="carousel-container flex overflow-x-hidden">
+              <div id="reviewsWrapper" class="flex transition-transform duration-300 ease-in-out">
+                  <!-- Review 1 -->
+                  <div class="review-slide w-full wd:w-1/2 lg:w-1/3 flex-shrink-0 p-3">
+                      <div class="review-card bg-white rounded-lg p-6 border t-4 border-blue-600">
+                          <div class="flex items-center mb-4">
+                              <div class="avatar w-12 h-12 rounded-full overflow-hidden mr-4">
+                                  <svg class="w-full h-full text-gray-700" fill="currentColor">
+                                      <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4"></path>
+                                  </svg>
+                              </div>
+                              <div>
+                                  <h4 class="font-semibold text-gray-800">Review 1</h4>
+                                  <div class="flex">
+                                      <span class="star"><i class="fas fa-star"></i></span>
+                                      <span class="star"><i class="fas fa-star"></i></span>
+                                      <span class="star"><i class="fas fa-star"></i></span>
+                                      <span class="star"><i class="fas fa-star"></i></span>
+                                      <span class="star"><i class="fas fa-star"></i></span>
+                                  </div>
+                              </div>
+                          </div>
+                          <p class="text-gray-600 italic">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui excepturi praesentium obcaecati quia consequatur blanditiis voluptatibus? Sunt itaque amet veritatis aliquam adipisci tempora ipsum natus unde voluptate sapiente et officiis placeat esse exercitationem minima error consequatur, iusto beatae numquam ipsa eaque? Suscipit quas ullam, numquam ipsam aliquam error atque ea.</p>
+                          <div class="mt-4 flex items-center">
+                              <i class="fab fa-google text-blue-600 mr-2"></i>
+                              <span class="text-sm text-gray-500">Posted on Google Maps</span>
+                          </div>
+                      </div>
+                  </div>
+
+                  <!-- Review 2 -->
+                  <div class="review-slide w-full wd:w-1/2 lg:w-1/3 flex-shrink-0 p-3">
+                      <div class="review-card bg-white rounded-lg p-6 border t-4 border-blue-600">
+                          <div class="flex items-center mb-4">
+                              <div class="avatar w-12 h-12 rounded-full overflow-hidden mr-4">
+                                  <svg class="w-full h-full text-gray-700" fill="currentColor">
+                                      <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4"></path>
+                                  </svg>
+                              </div>
+                              <div>
+                                  <h4 class="font-semibold text-gray-800">Review 2</h4>
+                                  <div class="flex">
+                                      <span class="star"><i class="fas fa-star"></i></span>
+                                      <span class="star"><i class="fas fa-star"></i></span>
+                                      <span class="star"><i class="fas fa-star"></i></span>
+                                      <span class="star"><i class="fas fa-star"></i></span>
+                                      <span class="star"><i class="fas fa-star"></i></span>
+                                  </div>
+                              </div>
+                          </div>
+                          <p class="text-gray-600 italic">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui excepturi praesentium obcaecati quia consequatur blanditiis voluptatibus? Sunt itaque amet veritatis aliquam adipisci tempora ipsum natus unde voluptate sapiente et officiis placeat esse exercitationem minima error consequatur, iusto beatae numquam ipsa eaque? Suscipit quas ullam, numquam ipsam aliquam error atque ea.</p>
+                          <div class="mt-4 flex items-center">
+                              <i class="fab fa-google text-blue-600 mr-2"></i>
+                              <span class="text-sm text-gray-500">Posted on Google Maps</span>
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="review-slide w-full wd:w-1/2 lg:w-1/3 flex-shrink-0 p-3">
+                      <div class="review-card bg-white rounded-lg p-6 border t-4 border-blue-600">
+                          <div class="flex items-center mb-4">
+                              <div class="avatar w-12 h-12 rounded-full overflow-hidden mr-4">
+                                  <svg class="w-full h-full text-gray-700" fill="currentColor">
+                                      <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4"></path>
+                                  </svg>
+                              </div>
+                              <div>
+                                  <h4 class="font-semibold text-gray-800">Review 3</h4>
+                                  <div class="flex">
+                                      <span class="star"><i class="fas fa-star"></i></span>
+                                      <span class="star"><i class="fas fa-star"></i></span>
+                                      <span class="star"><i class="fas fa-star"></i></span>
+                                      <span class="star"><i class="fas fa-star"></i></span>
+                                      <span class="star"><i class="fas fa-star"></i></span>
+                                  </div>
+                              </div>
+                          </div>
+                          <p class="text-gray-600 italic">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui excepturi praesentium obcaecati quia consequatur blanditiis voluptatibus? Sunt itaque amet veritatis aliquam adipisci tempora ipsum natus unde voluptate sapiente et officiis placeat esse exercitationem minima error consequatur, iusto beatae numquam ipsa eaque? Suscipit quas ullam, numquam ipsam aliquam error atque ea.</p>
+                          <div class="mt-4 flex items-center">
+                              <i class="fab fa-google text-blue-600 mr-2"></i>
+                              <span class="text-sm text-gray-500">Posted on Google Maps</span>
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="review-slide w-full wd:w-1/2 lg:w-1/3 flex-shrink-0 p-3">
+                      <div class="review-card bg-white rounded-lg p-6 border t-4 border-blue-600">
+                          <div class="flex items-center mb-4">
+                              <div class="avatar w-12 h-12 rounded-full overflow-hidden mr-4">
+                                  <svg class="w-full h-full text-gray-700" fill="currentColor">
+                                      <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4"></path>
+                                  </svg>
+                              </div>
+                              <div>
+                                  <h4 class="font-semibold text-gray-800">Review 4</h4>
+                                  <div class="flex">
+                                      <span class="star"><i class="fas fa-star"></i></span>
+                                      <span class="star"><i class="fas fa-star"></i></span>
+                                      <span class="star"><i class="fas fa-star"></i></span>
+                                      <span class="star"><i class="fas fa-star"></i></span>
+                                      <span class="star"><i class="fas fa-star"></i></span>
+                                  </div>
+                              </div>
+                          </div>
+                          <p class="text-gray-600 italic">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui excepturi praesentium obcaecati quia consequatur blanditiis voluptatibus? Sunt itaque amet veritatis aliquam adipisci tempora ipsum natus unde voluptate sapiente et officiis placeat esse exercitationem minima error consequatur, iusto beatae numquam ipsa eaque? Suscipit quas ullam, numquam ipsam aliquam error atque ea.</p>
+                          <div class="mt-4 flex items-center">
+                              <i class="fab fa-google text-blue-600 mr-2"></i>
+                              <span class="text-sm text-gray-500">Posted on Google Maps</span>
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="review-slide w-full wd:w-1/2 lg:w-1/3 flex-shrink-0 p-3">
+                      <div class="review-card bg-white rounded-lg p-6 border t-4 border-blue-600">
+                          <div class="flex items-center mb-4">
+                              <div class="avatar w-12 h-12 rounded-full overflow-hidden mr-4">
+                                  <svg class="w-full h-full text-gray-700" fill="currentColor">
+                                      <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4"></path>
+                                  </svg>
+                              </div>
+                              <div>
+                                  <h4 class="font-semibold text-gray-800">Review 5</h4>
+                                  <div class="flex">
+                                      <span class="star"><i class="fas fa-star"></i></span>
+                                      <span class="star"><i class="fas fa-star"></i></span>
+                                      <span class="star"><i class="fas fa-star"></i></span>
+                                      <span class="star"><i class="fas fa-star"></i></span>
+                                      <span class="star"><i class="fas fa-star"></i></span>
+                                  </div>
+                              </div>
+                          </div>
+                          <p class="text-gray-600 italic">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui excepturi praesentium obcaecati quia consequatur blanditiis voluptatibus? Sunt itaque amet veritatis aliquam adipisci tempora ipsum natus unde voluptate sapiente et officiis placeat esse exercitationem minima error consequatur, iusto beatae numquam ipsa eaque? Suscipit quas ullam, numquam ipsam aliquam error atque ea.</p>
+                          <div class="mt-4 flex items-center">
+                              <i class="fab fa-google text-blue-600 mr-2"></i>
+                              <span class="text-sm text-gray-500">Posted on Google Maps</span>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+          <!-- Navigation Buttons -->
+          <div class="flex justify-center mt-8 space-x-4">
+              <button id="prevBtn" class="control-btn bg-white border border-blue-500 text-blue">
+                  <i class="fas fa-chevron-left mr-2">Previous</i>
+              </button>
+              <button id="nextBtn" class="control-btn bg-white border border-blue-500 text-blue">
+                  Next <i class="fas fa-chevron-right ml-2"></i>
+              </button>
+          </div>
+
+          <!-- Dots Indicator -->
+      <div class="flex justify-center mt-6" id="dotsContainer"></div>
+      </div>
+
+  <!-- Decorative Tile Pattern -->
+  <div class="tile-pattern h-8 w-full mt-16 rounded-lg opacity-50"></div>
+  </div>
+
     <!-- Who We Are Section-->
     <h2 class="text">WHO WE ARE</h2>
     <p class="text" style="background-color: #ECEDF3; border-radius: 25px;">
@@ -89,15 +280,15 @@
       <p>Extra Miles Tile & Stone Installations LTD, Toronto, Canada</p>
       <div class="center">
         <div class="image">
-          <img src="Images_Extra/phone icon.png"  height="35" width="50">
+          <img src="Images/phone icon.png"  height="35" width="50">
         </div>
         <div class="text"> 
-          <p>(647) 617-3156</p>
+          <p><a href="tel:+16476173156">(647) 617-3156</a></p>
         </div>
       </div>
       <div class="center">
         <div class="image">
-          <img src="Images_Extra/mail icon.png" height="25" width="25">
+          <img src="Images/mail icon.png" height="25" width="25">
         </div>
         <div class="text"> 
           <a href="mailto:niko.gk@icloud.com">niko.gk@icloud.com</a>
@@ -107,8 +298,22 @@
         </div>
       </div>
       <br>
+
+      <!-- Bootstrap -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
+      <!-- d3 -->
+      <script src="https://d3js.org/d3.v7.min.js"></script>
+
+      <!-- My Scripts -->
+      <script src="js/main.js"></script>
+      <script src="js/reviews.js"></script>
     </footer>
-  </body>
+</body>
+<script>
+    document.getElementById("leftButton").addEventListener("click", () => updatePic(-1));
+    document.getElementById("rightButton").addEventListener("click", () => updatePic(1));
+</script>
 
     <!--
         Notes:
