@@ -14,35 +14,48 @@
     <!-- CSS files -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/reviews.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 </head>
 <header class="text" style="background-color: #3d8aef;">
-    <h1 style="color: #000080;">Extra Miles Tile & Stone Installations LTD</h1>
-
     <div class="row">
         <div class="col" id="headerContainer" style="height: 60px;">
             <!-- Logo -->
-            <img src="Images/logo.jpg" id="headerLogo">
-
+             <a href="index.html">
+                <img src="Images/logo.jpg" id="headerLogo">
+             </a>
+            
             <!-- Buttons Section-->
-            <a href="projects.html">
-                <button style="border-radius: 5px;">Projects</button>
-            </a>
-            <a href="gallery.html">
-                <button style="border-radius: 5px;">Gallery</button>
-            </a>
-            <a href="contact.html">
-                <button style="border-radius: 5px;">Contact</button>
-            </a>
+            <div id="linkContainer">
+                <a href="projects.html">
+                    <button id="pageLink">Projects</button>
+                </a>
+                <a href="gallery.html">
+                    <button id="pageLink">Gallery</button>
+                </a>
+                <a href="contact.html">
+                    <button id="pageLink">Contact</button>
+                </a>
+            </div>
         </div>
     </div>
 </header>
-
 <body>
   <!-- Slideshow -->
     <div class="row">
         <div class="col" id="slideshowContainer">
             <button type="button" id="leftButton">&lt</button>
             <img id="slide"></img>
+            <div id="bebas-neue">
+                <div id="overlay-text">
+                    <h1 id="slideTextTop"></h1>
+                    <h2 id="slideTextMid"></h2>
+                    <h3 id="slideTextBottom"></h3>
+                </div>
+            </div>
             <button type="button" id="rightButton">&gt</button>
         </div>
     </div>
@@ -201,10 +214,10 @@
           <!-- Navigation Buttons -->
           <div class="flex justify-center mt-8 space-x-4">
               <button id="prevBtn" class="control-btn bg-white border border-blue-500 text-blue">
-                  <i class="fas fa-chevron-left mr-2">Previous</i>
+                  <i class="fas mr-2">&lt Previous</i>
               </button>
               <button id="nextBtn" class="control-btn bg-white border border-blue-500 text-blue">
-                  Next <i class="fas fa-chevron-right ml-2"></i>
+                  <i class="fas ml-2">Next &gt</i>
               </button>
           </div>
 
@@ -280,7 +293,7 @@
       <p>Extra Miles Tile & Stone Installations LTD, Toronto, Canada</p>
       <div class="center">
         <div class="image">
-          <img src="Images/phone icon.png"  height="35" width="50">
+          <i class="fa-solid fa-phone"></i>
         </div>
         <div class="text"> 
           <p><a href="tel:+16476173156">(647) 617-3156</a></p>
@@ -288,7 +301,7 @@
       </div>
       <div class="center">
         <div class="image">
-          <img src="Images/mail icon.png" height="25" width="25">
+          <i class="fa-solid fa-envelope"></i>
         </div>
         <div class="text"> 
           <a href="mailto:niko.gk@icloud.com">niko.gk@icloud.com</a>
@@ -306,13 +319,18 @@
       <script src="https://d3js.org/d3.v7.min.js"></script>
 
       <!-- My Scripts -->
-      <script src="js/main.js"></script>
+      <script src="js/slides.js"></script>
       <script src="js/reviews.js"></script>
     </footer>
 </body>
 <script>
-    document.getElementById("leftButton").addEventListener("click", () => updatePic(-1));
-    document.getElementById("rightButton").addEventListener("click", () => updatePic(1));
+    // Switching 
+    document.getElementById("leftButton").addEventListener("click", () => {
+        updatePic(-1);
+    });
+    document.getElementById("rightButton").addEventListener("click", () => {
+        updatePic(1);
+    });
 </script>
 
     <!--

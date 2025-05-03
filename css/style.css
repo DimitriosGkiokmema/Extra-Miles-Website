@@ -1,12 +1,91 @@
+/* Fonts */
+#bebas-neue {
+    font-family: "Bebas Neue", sans-serif;
+    font-style: normal;
+  }  
+
 /* Header */
 .headerContainer {
     display: flex;
     position: relative;
+    height: 100%
 }
+
 #headerLogo {
-    width: 100px;
+    width: 110px;
     position: absolute;
     left: 0; 
+}
+
+#linkContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+#pageLink {
+    color: white;
+    font-size: 15px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+/* Slideshow */
+#slideshowContainer {
+    position: relative;
+    width: 100vw;
+    display: block;
+    max-height: 500px;
+    overflow: hidden;
+}
+
+#slide img {
+    width: 100%;
+    height: auto;
+}
+
+#leftButton, #rightButton {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5); /* Slight transparency */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+#leftButton {
+    left: 10px;
+}
+
+#rightButton {
+    right: 10px;
+}
+
+#overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* perfect centering */
+    color: white;
+    text-align: center;
+    width: 100%;
+  }
+
+  /* Text on Slides */
+#overlay-text h1 {
+    font-size: 50px;
+}
+
+#overlay-text h2 {
+    font-size: 40px;
+}
+
+#overlay-text h3 {
+    font-size: 30px;
 }
 
 /* Other */
@@ -59,13 +138,4 @@ ul {
 .list-column {
     flex: 1 1 250px; /* Grow to fill space, minimum width of 250px */
     max-width: 250px;
-}
-
-/* Slideshow */
-.slideshowContainer {
-    display: flex;
-}
-
-#slide {
-    width: 90%;
 }
