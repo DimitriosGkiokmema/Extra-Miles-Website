@@ -150,6 +150,16 @@ document.addEventListener("DOMContentLoaded", () => {
         autoAdvanceTimer = setInterval(nextSlide, autoAdvanceInterval);
     });
 
+    // Pause when user interacts with buttons
+    const btnContainer = document.getElementById('navButtons');
+    btnContainer.addEventListener('mouseenter', () => {
+        clearInterval(autoAdvanceTimer);
+    });
+
+    btnContainer.addEventListener('mouseleave', () => {
+        autoAdvanceTimer = setInterval(nextSlide, autoAdvanceInterval);
+    });
+
     // Also pause on touch devices
     carouselContainer.addEventListener('touchstart', () => {
         clearInterval(autoAdvanceTimer);
@@ -158,15 +168,4 @@ document.addEventListener("DOMContentLoaded", () => {
     carousel.addEventListener('touchend', () => {
         autoAdvanceTimer = setInterval(nextSlide, autoAdvanceInterval);
     }, { passive: true });
-
-    // Add keyboard navigation
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowLeft') {
-            console.log('L pressed')
-            prevSlide();
-        } else if (e.key === 'ArrowRight') {
-            console.log('R pressed')
-            nextSlide();
-        }
-    });
 });

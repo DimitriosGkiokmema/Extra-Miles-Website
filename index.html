@@ -212,7 +212,7 @@
           </div>
 
           <!-- Navigation Buttons -->
-          <div class="flex justify-center mt-8 space-x-4">
+          <div class="flex justify-center mt-8 space-x-4" id="navButtons">
               <button id="prevBtn" class="control-btn bg-white border border-blue-500 text-blue">
                   <i class="fas mr-2">&lt Previous</i>
               </button>
@@ -230,62 +230,37 @@
   </div>
 
     <!-- Who We Are Section-->
-    <h2 class="text">WHO WE ARE</h2>
-    <p class="text" style="background-color: #ECEDF3; border-radius: 25px;">
-      <br>
+    <div class="mb-12 text-center" style="margin-top: -70px;">
+        <h2 class="text-3xl md: text-4xl font-bold text-gray-800 mb-4">Who We Are</h2>
+        <div class="w-24 h-1 bg-blue-600 mx-auto mb-6"></div>
+    </div>
+    <div class="text" id="aboutUs">
+      <div style="margin-top: 10px; margin-bottom: 10px;">
       Welcome to Extra Miles Tile & Stone Installations LTD, your premier destination for professional tile installation services.
       With over 30 years of experience in the industry, we pride ourselves on our commitment to providing exceptional 
       craftsmanship and outstanding customer service. Our team of skilled and dedicated professionals is equipped to handle projects 
       of all sizes, from small residential bathrooms to large commercial spaces.
-      <br>
-      <br>
+      </div>
+      <div style="margin-top: 10px; margin-bottom: 10px;">
       At Extra Miles Tile & Stone Installations LTD, we understand that every project is unique. That's why we work closely with our 
       clients to understand their vision and deliver results that exceed expectations. We use only the highest quality materials and 
       latest installation techniques to ensure a beautiful and long-lasting finish.
-      <br>
-      <br>
+      </div>
+      <div style="margin-top: 10px; margin-bottom: 10px;">
       We are fully licensed and insured, and we offer <b><big>free estimates</big></b> for all our services. Contact us today to schedule a consultation 
       and let us transform your space with the beauty and durability of tile.
-      <br>
-      <br>
+      </div>
+      <div style="margin-top: 10px; margin-bottom: 10px;">
       Thank you for considering Extra Miles Tile & Stone Installations LTD for your shower and flooring renovation needs. We look forward to working with you!
-      <br>
-      <br>
-    </p>
-    <br>
+      </div>
+    </div>
 
     <!-- Services Section-->
-    <h2 class="text" style="color: rgb(21, 0, 255);">SERVICES</h2>
-    <div class="list-container">
-      <ul class="list-column">
-        <li>Shower Renovation</li>
-        <li>Flooring Renovation</li>
-      </ul>
-      <ul class="list-column">
-        <li>Porcelain Tile Installation</li>
-        <li>Marble Tile Installation</li>
-        <li>Ceramic Tile Installation</li>
-        <li>Glass Tile Installation</li>
-      </ul>
-      <ul class="list-column">
-        <li>Decorative Stone and Brick Installation</li>
-        <li>Laminate Flooring</li>
-        <li>LVP Flooring</li>
-        <li>Heated Floors</li>
-      </ul>
-      <ul class="list-column">
-        <li>Self Leveling and Floor Levelling</li>
-        <li>Shower Tile Installation</li>
-        <li>Backsplash Tile Installation</li>
-        <li>Bathroom Tile Installation</li>
-      </ul>
-      <ul class="list-column">
-        <li>Residential Tile Installers</li>
-        <li>Commercial Tile Contractors</li>
-        <li>Trade Licensed Tile Installer</li>
-        <li>Experienced in Floor and Wall Tiling</li>
-      </ul>
+    <div class="mb-12 text-center" style="margin-top: 70px;">
+        <h2 class="text-3xl md: text-4xl font-bold text-gray-800 mb-4">Services</h2>
+        <div class="w-24 h-1 bg-blue-600 mx-auto mb-6"></div>
     </div>
+    <div id="services"></div>
 
     <!-- Footer-->
     <footer class="text" style="background-color: #3d8aef;">
@@ -321,10 +296,11 @@
       <!-- My Scripts -->
       <script src="js/slides.js"></script>
       <script src="js/reviews.js"></script>
+      <script src="js/services.js"></script>
     </footer>
 </body>
 <script>
-    // Switching 
+    // Switching between slides
     document.getElementById("leftButton").addEventListener("click", () => {
         updatePic(-1);
     });
