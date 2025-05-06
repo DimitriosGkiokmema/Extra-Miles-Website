@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+
+    <!-- Bootstrap, tailwind, fontAwesome -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/d082821527.js" crossorigin="anonymous"></script>
+
+    <!-- CSS files -->
+    <link rel="stylesheet" href="css/gallery.css">
+    <link rel="stylesheet" href="css/header.css">
+</head>
+<header class="text" style="background-color: #3d8aef;">
+    <div class="row">
+        <div class="col" id="headerContainer" style="height: 60px;">
+            <!-- Logo -->
+             <a href="index.html">
+                <img src="Images/logo.jpg" id="headerLogo">
+             </a>
+            
+            <!-- Buttons Section-->
+            <div id="linkContainer">
+                <a href="projects.html">
+                    <button id="pageLink">Projects</button>
+                </a>
+                <a href="gallery.html">
+                    <button id="pageLink">Gallery</button>
+                </a>
+                <a href="contact.html">
+                    <button id="pageLink">Contact</button>
+                </a>
+            </div>
+        </div>
+    </div>
+</header>
+<body>
+    <div class="row">
+        <div class="col">
+            <!-- Title -->
+            <div class="row">
+                <div class="col" id="pageTitle">
+                    <div class="mb-12 text-center" style="margin-top: 70px;">
+                        <h1 class="text-3xl md: text-4xl font-bold text-gray-800 mb-4">Gallery</h1>
+                        <div class="w-24 h-1 bg-blue-600 mx-auto mb-6"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Selection -->
+            <div class="row">
+                <div class="col" style="display: flex; align-items: center; justify-content: center;">
+                    <div class="col-8" id="buttonContainer">
+                        <button type="button" id="allButton">All</button>
+                        <button type="button" id="kitButton">Kitchens</button>
+                        <button type="button" id="batButton">Bathrooms</button>
+                        <button type="button" id="comButton">Commercial</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gallery Pics -->
+            <div class="row">
+                <div class="col" id="galleryContainer">
+                    <div id="gallery"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    
+    <!-- My Scripts -->
+    <script src="js/gallery.js"></script>
+</body>
+<script>
+    // Switching between photo types
+    document.getElementById("allButton").addEventListener("click", () => {
+        switchTo('all');
+    });
+    document.getElementById("kitButton").addEventListener("click", () => {
+        switchTo('kit');
+    });
+    document.getElementById("batButton").addEventListener("click", () => {
+        switchTo('bat');
+    });
+    document.getElementById("comButton").addEventListener("click", () => {
+        switchTo('com');
+    });
+</script>
+</html>

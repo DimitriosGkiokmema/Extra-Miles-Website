@@ -2,34 +2,7 @@
 #bebas-neue {
     font-family: "Bebas Neue", sans-serif;
     font-style: normal;
-  }  
-
-/* Header */
-.headerContainer {
-    display: flex;
-    position: relative;
-    height: 100%
-}
-
-#headerLogo {
-    width: 110px;
-    position: absolute;
-    left: 0; 
-}
-
-#linkContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-}
-
-#pageLink {
-    color: white;
-    font-size: 15px;
-    margin-right: 10px;
-    margin-left: 10px;
-}
+  }
 
 /* Slideshow */
 #slideshowContainer {
