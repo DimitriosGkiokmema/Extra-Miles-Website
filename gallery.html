@@ -68,6 +68,11 @@
                     <div id="gallery"></div>
                 </div>
             </div>
+            <div class="row">
+                <div class="col">
+                    <button type="button" id="loadButton">Load More</button>
+                </div>
+            </div>
 
         </div>
     </div>
@@ -88,6 +93,12 @@
     });
     document.getElementById("comButton").addEventListener("click", () => {
         switchTo('com');
+    });
+
+    // Load more images
+    document.getElementById("loadButton").addEventListener("click", () => {
+        document.getElementById("loadButton").style.backgroundColor = 'rgb(61, 138, 239)';
+        loadMore();
     });
 </script>
 </html>

@@ -2,61 +2,94 @@ let kitchens = [];
 let bathrooms = [];
 let commercial = [];
 let all = [];
+let limit = 15;
+let batchesLoaded = 0;
 const container = document.getElementById('gallery');
-const color = '#3d8aef'
+const clickedColor = 'rgb(61, 138, 239)'
+const baseColor = 'rgb(244, 244, 244)';
+const API_BASE = 'https://extra-miles-backend.onrender.com/api/images';
 
 function switchTo(type) {
     container.innerHTML = "";
     clearButtons();
+    batchesLoaded = 0;
 
     if (type == 'all') {
-        displayPics(kitchens);
-        displayPics(bathrooms);
-        displayPics(commercial);
-        document.getElementById('allButton').style.backgroundColor = color;
+        displayPics(all);
+        document.getElementById('allButton').style.backgroundColor = clickedColor;
     } else if (type == 'kit') {
         displayPics(kitchens);
-        document.getElementById('kitButton').style.backgroundColor = color;
+        document.getElementById('kitButton').style.backgroundColor = clickedColor;
     } else if (type == 'bat') {
         displayPics(bathrooms);
-        document.getElementById('batButton').style.backgroundColor = color;
+        document.getElementById('batButton').style.backgroundColor = clickedColor;
     } else if (type == 'com') {
         displayPics(commercial);
-        document.getElementById('comButton').style.backgroundColor = color;
+        document.getElementById('comButton').style.backgroundColor = clickedColor;
     } else {
         console.log('Error: received invalid button type ' + type);
     }
 }
 
 function clearButtons() {
-    document.getElementById('allButton').style.backgroundColor = 'rgb(244, 244, 244)';
-    document.getElementById('kitButton').style.backgroundColor = 'rgb(244, 244, 244)';
-    document.getElementById('batButton').style.backgroundColor = 'rgb(244, 244, 244)';
-    document.getElementById('comButton').style.backgroundColor = 'rgb(244, 244, 244)';
+    document.getElementById('allButton').style.backgroundColor = baseColor;
+    document.getElementById('kitButton').style.backgroundColor = baseColor;
+    document.getElementById('batButton').style.backgroundColor = baseColor;
+    document.getElementById('comButton').style.backgroundColor = baseColor;
 }
 
-async function getImageKitFiles(folderPath) {
-    const response = await fetch('https://api.imagekit.io/v1/files?path=' + encodeURIComponent(folderPath), {
-        method: 'GET',
-        headers: {
-            'Authorization': 'Basic ' + btoa('private_bEbXbqKR5ttkFaL2zzDCMuJXZaU=:'),
-            'Content-Type': 'application/json'
-        }
-    });
-    
-    const data = await response.json();
-    
-    if (data && Array.isArray(data)) {
-        return data.map(file => folderPath + '/' + (file.name));
-    }
+// Gets images from backend
+async function getImages(folderPath, skip) {
+    try {    
+        const response = await fetch(`${API_BASE}?folder=${encodeURIComponent(folderPath)}&limit=${limit}&skip=${skip}`);
+        const images = await response.json();
 
-    return [];
+        return images.map(img => img.url);
+    } catch (err) {
+      console.error('Error loading images:', err);
+    }
 }
 
 async function fetchImages() {
-    kitchens = await getImageKitFiles('Extra_Miles/kitchens');
-    bathrooms = await getImageKitFiles('Extra_Miles/bathrooms');
-    commercial = await getImageKitFiles('Extra_Miles/other');
+    limit /= 3;
+    kitchens =  await getImages('Extra_Miles/kitchens', kitchens.length);
+    bathrooms = await getImages('Extra_Miles/bathrooms', bathrooms.length);
+    commercial = await getImages('Extra_Miles/other', commercial.length);
+    limit *= 3;
+
+    updateAll();
+    displayPics(all);
+    document.getElementById('allButton').style.backgroundColor = clickedColor;
+}
+
+async function loadMore() {
+    batchesLoaded++;
+
+    if (document.getElementById('allButton').style.backgroundColor == clickedColor) {
+        limit /= 3;
+        kitchens = kitchens.concat(await getImages('Extra_Miles/kitchens', kitchens.length));
+        bathrooms = bathrooms.concat(await getImages('Extra_Miles/bathrooms', bathrooms.length));
+        commercial = commercial.concat(await getImages('Extra_Miles/other', commercial.length));
+        limit *= 3;
+
+        updateAll();
+        displayPics(all);
+    } else if (document.getElementById('kitButton').style.backgroundColor == clickedColor) {
+        kitchens = kitchens.concat(await getImages('Extra_Miles/kitchens', kitchens.length));
+        displayPics(kitchens);
+    } else if (document.getElementById('batButton').style.backgroundColor == clickedColor) {
+        bathrooms = bathrooms.concat(await getImages('Extra_Miles/bathrooms', bathrooms.length));
+        displayPics(bathrooms);
+    }  else if (document.getElementById('comButton').style.backgroundColor == clickedColor) {
+        commercial = commercial.concat(await getImages('Extra_Miles/other', commercial.length));
+        displayPics(commercial);
+    }
+
+    document.getElementById("loadButton").style.backgroundColor = baseColor;
+}
+
+function updateAll() {
+    all = [];
 
     for (let i = 0; i < kitchens.length || i < bathrooms.length || i < commercial.length; i++) {
         if (i < kitchens.length) {
@@ -69,39 +102,33 @@ async function fetchImages() {
             all[all.length] = commercial[i];
         }
     }
-
-    displayPics(all);
-    document.getElementById('allButton').style.backgroundColor = color;
 }
 
 function displayPics(pics) {
-    for (let i = 0; i < pics.length; i++) {
-        createPic(pics[i]);
+    for (let i = batchesLoaded * limit; i < pics.length; i++) {
+        let pic = document.createElement('img');
+        pic.src = pics[i];
+        pic.className = 'galleryPic';
+
+        container.appendChild(pic);
+
+        // Attach click event listener to the gallery container
+        document.getElementById('gallery').addEventListener('click', function(event) {
+            createWindow(event);
+        });
     }
-}
-
-function createPic(url) {
-    let pic = document.createElement('img');
-    pic.src = 'https://ik.imagekit.io/dimi/' + url;
-    pic.className = 'galleryPic';
-
-    container.appendChild(pic);
-
-    // Attach click event listener to the gallery container
-    document.getElementById('gallery').addEventListener('click', function(event) {
-        createWindow(event);
-    });
 }
 
 function createWindow(event) {
     var newWindow = window.open();
-    newWindow.document.title = "Gallery Image";
     var img = newWindow.document.createElement("img");
+
     img.src = event.target.src;
     img.style.width = "100%";
     img.style.height = "auto";
+
+    newWindow.document.title = "Gallery Image";
     newWindow.document.body.appendChild(img);
 }
 
 fetchImages(); // loads all images stored in imageKit to variables
-displayPics(kitchens);

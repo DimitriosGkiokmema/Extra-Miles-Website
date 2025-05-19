@@ -144,3 +144,24 @@ body{
     font-size: 15px;
     color:#717273
 }
+
+/* Footer */
+/* links */
+#footer {
+    margin-top: 5vw;
+    background-color: #3d8aef;
+    padding-bottom: 50px;
+    display: flex;
+    align-items: center;
+    justify-self: center;
+}
+
+#linksContainer {
+    width: 50%;
+    margin-top: 25px;
+}
+
+/* Menu options */
+#menuOptions {
+    width: 50%;
+}
