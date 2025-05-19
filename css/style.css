@@ -7,14 +7,12 @@
 /* Slideshow */
 #slideshowContainer {
     position: relative;
-    width: 100vw;
     display: block;
     max-height: 500px;
     overflow: hidden;
 }
 
 #slide img {
-    width: 100%;
     height: auto;
 }
 
@@ -146,8 +144,8 @@ body{
 }
 
 /* Footer */
-/* links */
 #footer {
+    width: 100%;
     margin-top: 5vw;
     background-color: #3d8aef;
     padding-bottom: 50px;
@@ -156,12 +154,44 @@ body{
     justify-self: center;
 }
 
-#linksContainer {
-    width: 50%;
-    margin-top: 25px;
+#footerTitles {
+    margin-top: 15px;
+    margin-bottom: -15px;
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    justify-content: center;
+    text-align: center;
 }
 
-/* Menu options */
+#communicationLinks div {
+     display: flex;
+     align-items: center;
+     justify-self: center;
+}
+
+#socialLinks {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#socialLinks a {
+    margin-bottom: 50px;
+    padding: 10px;
+}
+
 #menuOptions {
-    width: 50%;
+    display: block;
+    text-align: center;
+}
+
+#menuOptions h1 {
+    font-size: 30px;
+}
+
+#menuOptions a {
+    display: block;
+    justify-content: center;
+    margin: 5px;
 }

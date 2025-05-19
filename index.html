@@ -46,8 +46,8 @@
 </header>
 <body>
   <!-- Slideshow -->
-    <div class="row">
-        <div class="col" id="slideshowContainer">
+    <div style="width: 100%;">
+        <div id="slideshowContainer">
             <button type="button" id="leftButton">&lt</button>
             <img id="slide"></img>
             <div id="bebas-neue">
@@ -224,11 +224,11 @@
 
           <!-- Dots Indicator -->
       <div class="flex justify-center mt-6" id="dotsContainer"></div>
-      </div>
+    </div>
 
   <!-- Decorative Tile Pattern -->
   <div class="tile-pattern h-8 w-full mt-16 rounded-lg opacity-50"></div>
-  </div>
+    </div>
 
     <!-- Who We Are Section-->
     <div class="mb-12 text-center" style="margin-top: -70px;">
@@ -264,20 +264,23 @@
     <div id="services"></div>
 
     <!-- Footer-->
-     <div class="row" style="display: flex; align-items: center; justify-self: center;">
-        <div clas="col-6" style="width: 50%;">
-            COL 1
-        </div>
-        <div class="col-6" style="background-color: #3d8aef;">
-            COL 2
-        </div>
-     </div>
     <div class="row" id="footer">
-        <div class="col-4">
-            <img src="Images/logo.jpg">
-            <p>Extra Miles Tile & Stone Installations LTD can bring all your home remodelling dreams to reality.</p>
-            
-            <div id="linksContainer"></div>
+        <div class="row" id="footerTitles">
+            <div class="col-4" id="menuOptions">
+                <h1>Contact</h1>
+                <div class="w-24 h-1 bg-blue-600 mx-auto mb-6"></div>
+            </div>
+            <div class="col-4" id="menuOptions">
+                <h1>Socials</h1>
+                <div class="w-24 h-1 bg-blue-600 mx-auto mb-6"></div>
+            </div>
+            <div class="col-4" id="menuOptions">
+                <h1>Menu</h1>
+                <div class="w-24 h-1 bg-blue-600 mx-auto mb-6"></div>
+            </div>
+        </div>
+        <div class="row">     
+            <div class="col-4" id="menuOptions">
                 <div id="communicationLinks">
                     <div>
                         <i class="fa-solid fa-phone"></i>
@@ -288,33 +291,40 @@
                         <a href="mailto:niko.gk@icloud.com">niko.gk@icloud.com</a>
                     </div>
                 </div>
-                <div id="siteLinks">
-                    <a href="https://www.facebook.com/people/Extra-Miles-Tile-Stone/100058747973996/" target="_blank">
-                        <i class="fa-brands fa-facebook"></i>
-                    </a>
-                    <a href="https://www.youtube.com/" target="_blank">
-                        <i class="fa-brands fa-youtube"></i>
-                    </a>
-                    <a href="https://www.instagram.com/" target="_blank">
-                        <i class="fa-brands fa-instagram"></i>
-                    </a>
-                    <a href="https://g.co/kgs/xAohkUo" target="_blank">
-                        <i class="fa-solid fa-location-dot"></i>
-                    </a>
+            </div>
+            <div class="col-4" id="menuOptions">
+                <div class="row">
+                    <div class="col" id="socialLinks">
+                        <a href="https://www.instagram.com/" target="_blank">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="https://www.facebook.com/people/Extra-Miles-Tile-Stone/100058747973996/" target="_blank">
+                            <i class="fa-brands fa-facebook"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col" id="socialLinks">
+                        <a href="https://g.co/kgs/xAohkUo" target="_blank">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </a>
+                        <a href="https://www.youtube.com/" target="_blank">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-4 offset-3" id="menuOptions">
-            <h1>Menu</h1>
-            <a href="projects.html">
-                <button id="pageLink">Projects</button>
-            </a>
-            <a href="gallery.html">
-                <button id="pageLink">Gallery</button>
-            </a>
-            <a href="contact.html">
-                <button id="pageLink">Contact</button>
-            </a>
+            <div class="col-4 " id="menuOptions">
+                <a href="projects.html">
+                    <button>Projects</button>
+                </a>
+                <a href="gallery.html">
+                    <button>Gallery</button>
+                </a>
+                <a href="contact.html">
+                    <button>Contact</button>
+                </a>
+            </div>
         </div>
     </div>
 

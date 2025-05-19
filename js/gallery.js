@@ -3,7 +3,6 @@ let bathrooms = [];
 let commercial = [];
 let all = [];
 let limit = 15;
-let batchesLoaded = 0;
 const container = document.getElementById('gallery');
 const clickedColor = 'rgb(61, 138, 239)'
 const baseColor = 'rgb(244, 244, 244)';
@@ -12,7 +11,6 @@ const API_BASE = 'https://extra-miles-backend.onrender.com/api/images';
 function switchTo(type) {
     container.innerHTML = "";
     clearButtons();
-    batchesLoaded = 0;
 
     if (type == 'all') {
         displayPics(all);
@@ -63,8 +61,6 @@ async function fetchImages() {
 }
 
 async function loadMore() {
-    batchesLoaded++;
-
     if (document.getElementById('allButton').style.backgroundColor == clickedColor) {
         limit /= 3;
         kitchens = kitchens.concat(await getImages('Extra_Miles/kitchens', kitchens.length));
@@ -105,7 +101,13 @@ function updateAll() {
 }
 
 function displayPics(pics) {
-    for (let i = batchesLoaded * limit; i < pics.length; i++) {
+    let shift = limit;
+    
+    if (pics.length < limit) {
+        shift = pics.length;
+    }
+
+    for (let i = pics.length - shift; i < pics.length; i++) {
         let pic = document.createElement('img');
         pic.src = pics[i];
         pic.className = 'galleryPic';
