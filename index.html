@@ -341,12 +341,15 @@
     <script src="js/services.js"></script>
 </body>
 <script>
+    let slidesList = ["other/IMG_2445.png", "other/IMG_5558.png", "kitchens/IMG_5712.png", "kitchens/IMG_5610.png"];
+    let slides = new slideShow(slidesList, 'indexSlides');
+
     // Switching between slides
     document.getElementById("leftButton").addEventListener("click", () => {
-        updatePic(-1);
+        slides.updatePic(-1);
     });
     document.getElementById("rightButton").addEventListener("click", () => {
-        updatePic(1);
+        slides.updatePic(1);
     });
 </script>
 

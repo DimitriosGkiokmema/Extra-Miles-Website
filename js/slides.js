@@ -1,47 +1,64 @@
-// class slideShow {
-//     constructor(pics) {
-//         this.slides = pics;
-//     }
-// }
+// Creates a slideshow, given a list of images
+// Needs four containers: slide, slideText[Top, Mid, Bottom]
 
-let slides = ["other/IMG_2445.png", "other/IMG_5558.png", "kitchens/IMG_5712.png", "kitchens/IMG_5610.png"];
-let slideIndex = 0;
-let strTop = '';
-let strMid = '';
-let strBottom = '';
+class slideShow {
+    constructor(pics, text) {
+        this.slides = pics;
+        this.slideIndex = 0;
+        this.strTop = '';
+        this.strMid = '';
+        this.strBottom = '';
+        this.txtData = [];
 
-function loadPic() {
-    document.getElementById("slide").src = "https://ik.imagekit.io/dimi/Extra_Miles/" + slides[slideIndex];
-    document.getElementById("slideTextTop").textContent = strTop;
-    document.getElementById("slideTextMid").textContent = strMid;
-    document.getElementById("slideTextBottom").textContent = strBottom;
-
-    strTop = '';
-    strMid = '';
-    strBottom = '';
-}
-
-function updatePic(i) {
-    slideIndex += i;
-
-    // Slide index
-    if (slideIndex >= slides.length) {
-        slideIndex = 0;
-    } else if (slideIndex < 0) {
-        slideIndex = slides.length - 1;
+        // Load Text
+        if (text != '') {
+            this.loadText(text);
+        }
     }
 
-    // Text to display
-    if (slideIndex == 0) {
-        strTop = 'Extra Miles Tile & Stone Installations LTD';
-        strMid = 'HOME - KITCHEN - BATHROOM RENOVATION';
-        strBottom = 'Renovate your living spaces and design your home just the way you want with our home renovation service.';
-    } else {
-        strTop = `Slide ${slideIndex}`;
+    loadText(text) {
+        d3.csv(`data/${text}.csv`, row => {
+            let data = [row.top, row.mid, row.bot];
+            this.txtData.push(data);
+        }).then( () => {
+            // Initialize slide
+            this.updatePic(0);
+        });
+
+        // console.log(this.txtData[0][1])
+    }
+    
+    loadPic() {
+        document.getElementById("slide").src = "https://ik.imagekit.io/dimi/Extra_Miles/" + this.slides[this.slideIndex];
+        document.getElementById("slideTextTop").textContent = this.strTop;
+        document.getElementById("slideTextMid").textContent = this.strMid;
+        document.getElementById("slideTextBottom").textContent = this.strBottom;
+
+        this.strTop = '';
+        this.strMid = '';
+        this.strBottom = '';
     }
 
-    loadPic();
-}
+    updatePic(i) {
+        this.slideIndex += i;
 
-// Initialize slide
-updatePic(0);
+        // Ensures valid slide index
+        if (this.slideIndex >= this.slides.length) {
+            this.slideIndex = 0;
+        } else if (this.slideIndex < 0) {
+            this.slideIndex = this.slides.length - 1;
+        }
+
+        if (this.txtData.length != 0 && this.slideIndex < this.txtData.length) {
+            this.updateText();
+        }
+
+        this.loadPic();
+    }
+
+    updateText() {
+        this.strTop = this.txtData[this.slideIndex][0];
+        this.strMid = this.txtData[this.slideIndex][1];
+        this.strBottom = this.txtData[this.slideIndex][2];
+    }
+}
