@@ -1,3 +1,9 @@
+// class slideShow {
+//     constructor(pics) {
+//         this.slides = pics;
+//     }
+// }
+
 let slides = ["other/IMG_2445.png", "other/IMG_5558.png", "kitchens/IMG_5712.png", "kitchens/IMG_5610.png"];
 let slideIndex = 0;
 let strTop = '';

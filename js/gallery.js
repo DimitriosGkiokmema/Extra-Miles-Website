@@ -115,7 +115,7 @@ function displayPics(pics) {
         container.appendChild(pic);
 
         // Attach click event listener to the gallery container
-        document.getElementById('gallery').addEventListener('click', function(event) {
+        container.addEventListener('click', function(event) {
             createWindow(event);
         });
     }
