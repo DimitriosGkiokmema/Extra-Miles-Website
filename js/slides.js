@@ -16,6 +16,11 @@ class slideShow {
         }
     }
 
+    setPics(pics) {
+        this.slides = pics;
+        this.updatePic(0);
+    }
+
     loadText(text) {
         d3.csv(`data/${text}.csv`, row => {
             let data = [row.top, row.mid, row.bot];
@@ -24,8 +29,6 @@ class slideShow {
             // Initialize slide
             this.updatePic(0);
         });
-
-        // console.log(this.txtData[0][1])
     }
     
     loadPic() {

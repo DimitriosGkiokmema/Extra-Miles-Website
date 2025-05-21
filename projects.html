@@ -12,6 +12,7 @@
 
     <!-- CSS files -->
     <link rel="stylesheet" href="css/projects.css">
+    <link rel="stylesheet" href="css/popup.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
 </head>
@@ -40,7 +41,29 @@
 </header>
 <body>
     <!-- Projects -->
-    <div id="projectsContainer"></div>
+    <div id="projectsContainer">
+        <!-- Slideshow & Popup -->
+        <div id="popup" class="popup" style="width: 100%;">
+            <button class="close-btn" onclick="closePopup()">X</button>
+            <div class="popup-content">
+                <button type="button" id="leftButton" onclick="SLIDESHOW.updatePic(-1)">&lt</button>
+
+                <div class="image-wrapper">
+                    <img id="slide"></img>
+                </div>
+
+                <div id="bebas-neue">
+                    <div id="overlay-text">
+                        <h1 id="slideTextTop"></h1>
+                        <h2 id="slideTextMid"></h2>
+                        <h3 id="slideTextBottom"></h3>
+                    </div>
+                </div>
+                
+                <button type="button" id="rightButton" onclick="SLIDESHOW.updatePic(1)">&gt</button>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer-->
     <div class="row" id="footer">
@@ -114,7 +137,36 @@
     <script src="https://d3js.org/d3.v7.min.js"></script>
 
     <!-- My Scripts -->
-    <!-- <script src="js/slides.js"></script> -->
+    <script src="js/slides.js"></script>
     <script src="js/projects.js"></script>
 </body>
+<script>
+    let SLIDESHOW = new slideShow([], '');
+    let POPUP = document.getElementById("popup");
+    let imgBatch = [];
+    let batchTitle = '';
+    closePopup();
+
+    d3.csv("data/projects.csv", row => {
+        if (row.title == '') {
+            imgBatch.push(row.image);
+        } else {
+            new Project(imgBatch, batchTitle);
+            
+            batchTitle = row.title;
+            imgBatch = [row.image];
+        }
+    }).then( () => {
+        new Project(imgBatch, batchTitle);
+    });
+
+    
+    function openPopup() {
+        POPUP.style.display = 'flex';
+    }
+
+    function closePopup() {
+        POPUP.style.display = 'none';
+    }
+</script>
 </html>
