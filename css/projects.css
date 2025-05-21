@@ -1,9 +1,11 @@
 #projectsContainer {
     display: flex;
+    height: auto;
     flex-wrap: wrap;
     gap: 20px;
     padding: 25px;
     justify-content: center;
+    align-items: flex-start;
 }
 
 .projectsPic {
@@ -16,8 +18,6 @@
     transition: transform 0.2s ease-in-out;
 }
 
-.projectsPic:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-    transform: rotate(5deg);
+.projectTitle {
+    text-align: center;
 }

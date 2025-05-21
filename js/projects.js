@@ -18,6 +18,7 @@ class Project {
     pic.src = "https://ik.imagekit.io/dimi/Extra_Miles/" + this.images[0];
     let picTitle = document.createElement('h1');
     picTitle.textContent = this.title;
+    picTitle.className = 'projectTitle';
 
     picContainer.appendChild(pic);
     picContainer.appendChild(picTitle);
