@@ -11,7 +11,7 @@
     <script src="https://kit.fontawesome.com/d082821527.js" crossorigin="anonymous"></script>
 
     <!-- CSS files -->
-    <link rel="stylesheet" href="css/gallery.css">
+    <link rel="stylesheet" href="css/contact.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
 </head>
@@ -31,54 +31,43 @@
                 <a href="gallery.html">
                     <button id="pageLink">Gallery</button>
                 </a>
-                <!-- <a href="contact.html">
+                <a href="contact.html">
                     <button id="pageLink">Contact</button>
-                </a> -->
+                </a>
             </div>
         </div>
     </div>
 </header>
 <body>
-    <div class="row">
-        <div class="col">
-            <!-- Title -->
-            <div class="row">
-                <div class="col" id="pageTitle">
-                    <div class="mb-12 text-center" style="margin-top: 70px;">
-                        <h1 class="text-3xl md: text-4xl font-bold text-gray-800 mb-4">Gallery</h1>
-                        <div class="w-24 h-1 bg-blue-600 mx-auto mb-6"></div>
-                    </div>
-                </div>
+    <!-- Contact Form -->
+    <section class="contact-us" id="contact-section">
+         <form id="contact" action="" method="get">
+            <div class="section-heading">
+                <h4>Contact us</h4>
             </div>
 
-            <!-- Selection -->
-            <div class="row">
-                <div class="col" style="display: flex; align-items: center; justify-content: center;">
-                    <div class="col-8" id="buttonContainer">
-                        <button type="button" id="allButton">All</button>
-                        <button type="button" id="kitButton">Kitchens</button>
-                        <button type="button" id="batButton">Bathrooms</button>
-                        <button type="button" id="comButton">Commercial</button>
-                    </div>
-                </div>
+            <div class="inputField">
+                <input type="name" name="name" id="name" placeholder="Your name" autocomplete="on" required>
+                <span class="valid_info_name"></span>
             </div>
 
-            <!-- Gallery Pics -->
-            <div class="row">
-                <div class="col" id="galleryContainer">
-                    <div id="gallery"></div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <button type="button" id="loadButton">Load More</button>
-                </div>
+            <div class="inputField">
+                <input type="Email" name="email" id="email" placeholder="Your email" required="" />
+                <span class="valid_info_email"></span>
             </div>
 
-        </div>
-    </div>
+            <div class="inputField">
+                <textarea name="message" id="message" placeholder="Your message"></textarea>
+                <span class="valid_info_message"></span>
+            </div>
 
-        <!-- Footer-->
+            <div class="inputField btn">
+                <button type="submit" id="submitBtn" class="main-gradient-button">Send a message</button>
+            </div>
+        </form>
+    </section>
+
+    <!-- Footer-->
     <div class="row" id="footer">
         <div class="row" id="footerTitles">
             <div class="col-4" id="menuOptions">
@@ -136,9 +125,9 @@
                 <a href="gallery.html">
                     <button>Gallery</button>
                 </a>
-                <!-- <a href="contact.html">
+                <a href="contact.html">
                     <button>Contact</button>
-                </a> -->
+                </a>
             </div>
         </div>
     </div>
@@ -148,29 +137,14 @@
 
     <!-- d3 -->
     <script src="https://d3js.org/d3.v7.min.js"></script>
-    
+
     <!-- My Scripts -->
-    <script src="js/gallery.js"></script>
+    <script src="js/contact.js"></script>
 </body>
 <script>
-    // Switching between photo types
-    document.getElementById("allButton").addEventListener("click", () => {
-        switchTo('all');
-    });
-    document.getElementById("kitButton").addEventListener("click", () => {
-        switchTo('kit');
-    });
-    document.getElementById("batButton").addEventListener("click", () => {
-        switchTo('bat');
-    });
-    document.getElementById("comButton").addEventListener("click", () => {
-        switchTo('com');
-    });
-
-    // Load more images
-    document.getElementById("loadButton").addEventListener("click", () => {
-        document.getElementById("loadButton").style.backgroundColor = 'rgb(61, 138, 239)';
-        loadMore();
+    document.getElementById("submitBtn").addEventListener("click", () => {
+        console.log('check')
+        checkInput();
     });
 </script>
 </html>
