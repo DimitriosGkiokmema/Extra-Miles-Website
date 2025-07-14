@@ -81,7 +81,7 @@ textarea {
   margin-bottom: 20px;
 }
 
-.valid_info_name, .valid_info_email, .valid_info_message{
+.valid_info_name, .valid_info_email, .valid_info_message, .valid_info_phone{
   display: inline-block;
   font-size: 13px;
   margin: 5px 2px;
