@@ -41,7 +41,7 @@
 <body>
     <!-- Contact Form -->
     <section class="contact-us" id="contact-section">
-         <!-- <form id="contact" action="" name="submit-to-google-sheet">
+         <form id="contact" action="" name="submit-to-google-sheet">
             <div class="section-heading">
                 <h4>Contact us</h4>
             </div>
@@ -62,15 +62,24 @@
             </div>
 
             <div class="inputField">
-                <textarea name="message" id="message" placeholder="Your message"></textarea>
+                <textarea name="message" id="msg" placeholder="Your message"></textarea>
                 <span class="valid_info_message"></span>
             </div>
 
             <div class="inputField btn">
                 <button type="submit" id="submitBtn" class="main-gradient-button">Send a message</button>
             </div>
-        </form> -->
-        <p style="text-align: center; color: white; font-size: 30px;">Please call or email us!</p>
+        </form>
+        <!-- <p style="text-align: center; color: white; font-size: 30px;">Please call or email us!</p> -->
+
+        <!-- <form name="submit-to-google-sheet">
+            <input type="text" name="Name" placeholder="Your Name" required>
+            <input type="email" name="Email" placeholder="Your Email" required>
+            <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+            <button type="submit" class="btn btn2">Submit</button>
+        </form>
+
+        <span id="msg"></span> -->
     </section>
 
     <!-- Footer-->
@@ -147,26 +156,27 @@
     <!-- My Scripts -->
     <script src="js/contact.js"></script>
 </body>
-<script>
+<!-- <script>
     document.getElementById("submitBtn").addEventListener("click", () => {
         console.log('check')
         checkInput();
     });
-</script>
+</script> -->
 <script>
     // Sends form data to google sheet
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbwklCPWGtE7BVLorZ9I2RC7IXA1Wz71-FtW8yyUUCtOB-uaXBL7XEQo8GYefkgMC6AJ/exec'
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwf1f-3quPY7MShWLYEgcSp6ztwFDdjXlic9K2siAfPmHWCRMrQMlTBHM0T3oY0fLR7/exec'
     const form = document.forms['submit-to-google-sheet']
-    const msg = document.getElementById("msg")
+    const message = document.getElementById("msg")
 
     form.addEventListener('submit', e => {
+        console.log('form submited')
         e.preventDefault()
         fetch(scriptURL, { method: 'POST', body: new FormData(form)})
         .then(response => {
-            msg.innerHTML = "Message sent successfully"
+            message.innerHTML = "Message sent successfully"
 
             setTimeout(function() {
-                msg.innerHTML = ""
+                message.innerHTML = ""
             }, 5000)
             form.reset()
         })
